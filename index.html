@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-NEXT Men's Therapy — Barbershop, Uyo</title>
+<meta name="description" content="E-NEXT Men's Therapy — haircuts, skin care and grooming on Nwaniba Road, Uyo. 4.8 stars, open daily till 9pm.">
+<style>
+  :root{
+    --charcoal:#171410;
+    --charcoal-2:#211d17;
+    --parchment:#ece4d4;
+    --brass:#b98a4e;
+    --brass-bright:#d6a869;
+    --rust:#7a2e22;
+    --line:rgba(236,228,212,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--charcoal);
+    color:var(--parchment);
+    font-family:'Iowan Old Style','Georgia','Times New Roman',serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* ---- header ---- */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(23,20,16,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .headbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:920px;margin:0 auto;
+  }
+  .mark{font-size:1.25rem;letter-spacing:0.02em;font-weight:600;}
+  .mark span{color:var(--brass-bright);}
+  .call-btn{
+    font-family:inherit;
+    border:1px solid var(--brass);
+    color:var(--brass-bright);
+    padding:8px 16px;
+    border-radius:2px;
+    font-size:0.92rem;
+    transition:background 0.2s ease, color 0.2s ease;
+  }
+  .call-btn:hover{background:var(--brass);color:var(--charcoal);}
+
+  /* ---- hero ---- */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex;
+    align-items:flex-end;
+    background:linear-gradient(180deg, rgba(23,20,16,0.35) 0%, rgba(23,20,16,0.55) 55%, rgba(23,20,16,0.97) 100%), url('img/shopfront.jpg') center 25%/cover no-repeat;
+  }
+  .hero-inner{
+    width:100%;
+    max-width:920px;
+    margin:0 auto;
+    padding:48px 24px 56px;
+  }
+  .status-row{
+    display:flex;align-items:center;gap:10px;
+    font-size:0.85rem;letter-spacing:0.02em;
+    color:var(--parchment);opacity:0.85;
+    margin-bottom:22px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:#7fae6f;display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.6rem, 8vw, 4.4rem);
+    font-weight:600;
+    line-height:1.02;
+    color:var(--parchment);
+    max-width:11ch;
+  }
+  .hero .tagline{
+    font-family:inherit;font-style:italic;
+    color:var(--brass-bright);
+    font-size:clamp(1.1rem, 3vw, 1.5rem);
+    margin-top:10px;
+  }
+  .hero p.sub{
+    max-width:46ch;
+    margin-top:20px;
+    color:var(--parchment);
+    opacity:0.82;
+    font-size:1.02rem;
+  }
+  .hero-actions{
+    display:flex;flex-wrap:wrap;gap:12px;
+    margin-top:32px;
+  }
+  .btn{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:0.95rem;
+    padding:14px 22px;
+    border-radius:2px;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--brass);color:var(--charcoal);font-weight:600;}
+  .btn-primary:hover{background:var(--brass-bright);}
+  .btn-ghost{border:1px solid var(--line);color:var(--parchment);}
+  .btn-ghost:hover{border-color:var(--brass);}
+
+  /* ---- rating strip ---- */
+  .rating-strip{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:26px 0;
+  }
+  .rating-row{
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:16px;
+  }
+  .rating-stars{font-size:1.3rem;letter-spacing:2px;color:var(--brass-bright);}
+  .rating-num{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:0.9rem;opacity:0.75;margin-left:10px;}
+  .rating-note{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:0.88rem;opacity:0.7;}
+
+  /* ---- section shared ---- */
+  section{padding:72px 0;}
+  .section-head{margin-bottom:36px;max-width:52ch;}
+  .section-head h2{
+    font-size:clamp(1.7rem,4vw,2.3rem);
+    font-weight:600;
+    color:var(--parchment);
+  }
+  .section-head p{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    color:var(--parchment);opacity:0.7;margin-top:10px;font-size:1rem;
+  }
+
+  /* ---- services ---- */
+  .service-list{
+    border-top:1px solid var(--line);
+  }
+  .service-row{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+    gap:20px;
+  }
+  .service-row h3{font-size:1.25rem;font-weight:600;color:var(--parchment);}
+  .service-row p{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:0.92rem;color:var(--parchment);opacity:0.65;max-width:34ch;text-align:right;
+  }
+
+  /* ---- gallery / story ---- */
+  .story{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+    align-items:center;
+  }
+  .story img{border-radius:2px;}
+  .story .copy p{
+    font-size:1.05rem;
+    opacity:0.85;
+    margin-bottom:16px;
+  }
+  .story .copy p:first-child{
+    font-size:1.25rem;
+    color:var(--brass-bright);
+    font-style:italic;
+  }
+
+  /* ---- visit / hours ---- */
+  .visit-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:48px;
+  }
+  .info-block{margin-bottom:26px;}
+  .info-block .label{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:0.78rem;letter-spacing:0.06em;
+    color:var(--brass-bright);
+    margin-bottom:6px;
+  }
+  .info-block .value{font-size:1.15rem;}
+  .hours-table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:0.95rem;
+  }
+  .hours-table td{
+    padding:9px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .hours-table td:last-child{text-align:right;color:var(--parchment);opacity:0.85;}
+  .hours-table tr.today td{color:var(--brass-bright);}
+
+  /* ---- footer cta ---- */
+  .final-cta{
+    text-align:center;
+    padding:80px 0 96px;
+    border-top:1px solid var(--line);
+  }
+  .final-cta h2{
+    font-size:clamp(1.8rem,5vw,2.6rem);
+    max-width:16ch;margin:0 auto 28px;
+  }
+  footer{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    text-align:center;padding:28px 24px;font-size:0.82rem;opacity:0.5;
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:720px){
+    .story, .visit-grid{grid-template-columns:1fr;}
+    .service-row{flex-direction:column;gap:6px;}
+    .service-row p{text-align:left;}
+    .hero{min-height:78vh;align-items:flex-end;}
+  }
+
+  :focus-visible{outline:2px solid var(--brass-bright);outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar sans">
+    <div class="mark">E-NEXT <span>Men's Therapy</span></div>
+    <a class="call-btn" href="tel:+2347033739230">Call shop</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="status-row sans"><span class="dot"></span> Open now · closes 9pm</div>
+    <h1>Sit down.<br>Let the chair do the rest.</h1>
+    <div class="tagline">Men's Therapy — Uyo's grooming ritual</div>
+    <p class="sub">Fades, colour, skin and beard care on Nwaniba Road. The kind of cut that resets your whole week.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/2347033739230" target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a class="btn btn-ghost" href="tel:+2347033739230">Call 0703 373 9230</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="rating-strip sans">
+    <div class="rating-row">
+      <div><span class="rating-stars">★★★★★</span><span class="rating-num">4.8 from 14 reviews</span></div>
+      <div class="rating-note">178 Nwaniba Rd, Uyo 520271, Akwa Ibom</div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="section-head">
+      <h2>What we treat you to</h2>
+      <p>Every service on the board, front to back.</p>
+    </div>
+    <div class="service-list">
+      <div class="service-row">
+        <h3>Hair Cutz</h3>
+        <p>Fades, tapers and sharp shape-ups, cut to your face.</p>
+      </div>
+      <div class="service-row">
+        <h3>Hair Colouring &amp; Extensions</h3>
+        <p>Full colour work and extensions for a complete change.</p>
+      </div>
+      <div class="service-row">
+        <h3>Skin Care</h3>
+        <p>Face and scalp treatments that finish the look properly.</p>
+      </div>
+      <div class="service-row">
+        <h3>Bumps Treatment</h3>
+        <p>Targeted care for razor bumps and irritation.</p>
+      </div>
+      <div class="service-row">
+        <h3>Lip Balm</h3>
+        <p>A small finishing touch, on the house of good grooming.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="inside">
+    <div class="story">
+      <img src="img/interior.jpg" alt="Barber working on a client inside E-NEXT Men's Therapy">
+      <div class="copy">
+        <p>"Men's Therapy" isn't just a name on the signboard.</p>
+        <p>It's the forty minutes where nobody's calling your name — just clippers, a mirror, and someone who knows exactly how you like your line.</p>
+        <p>Walk-ins are welcome, but message ahead on WhatsApp if you want a specific barber or time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="section-head">
+      <h2>Find us</h2>
+    </div>
+    <div class="visit-grid">
+      <div>
+        <div class="info-block">
+          <div class="label sans">ADDRESS</div>
+          <div class="value">178 Nwaniba Rd, Uyo 520271, Akwa Ibom State</div>
+        </div>
+        <div class="info-block">
+          <div class="label sans">PHONE / WHATSAPP</div>
+          <div class="value"><a href="tel:+2347033739230">0703 373 9230</a></div>
+        </div>
+        <div class="info-block">
+          <div class="label sans">RATING</div>
+          <div class="value">4.8 stars · 14 Google reviews</div>
+        </div>
+      </div>
+      <div>
+        <table class="hours-table">
+          <tr><td>Monday – Sunday</td><td>Open · Closes 9pm</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="final-cta">
+  <h2>Your next cut is one message away.</h2>
+  <div class="hero-actions" style="justify-content:center;">
+    <a class="btn btn-primary" href="https://wa.me/2347033739230" target="_blank" rel="noopener">Message on WhatsApp</a>
+    <a class="btn btn-ghost" href="tel:+2347033739230">Call the shop</a>
+  </div>
+</div>
+
+<footer>E-NEXT Men's Therapy · 178 Nwaniba Rd, Uyo</footer>
+
+</body>
+</html>
